@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+li,oi{
+	list-style: none;
+}
+
+a{ 
+	color: inherit;
+	text-decoration: none;
+}
+
+body{
+	font-size: 14px;
+	color: #666;
+}
