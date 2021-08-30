@@ -15,7 +15,7 @@
 			<li><a href="#">공식 앱</a></li>
 		</ul>
 	</div>
-	<div class="tb_nav tb_list">
+	<nav class="tb_nav tb_list">
 		<ul>
 			<li><a href="#">menu</a></li>
 			<li><a href="#">menu</a></li>
@@ -28,11 +28,11 @@
 			<li><a href="#">menu</a></li>
 			<li><a href="#">menu</a></li>
 		</ul>
-	</div>
+	</nav>
 	<div class="tb_util tb_list">
 		<ul>
 			<li><a href="member/register" target="_blank">회원가입</a></li>
-			<li><a href="#">로그인</a></li>
+			<li><a href="member/login" target="_blank">로그인</a></li>
 		</ul>
 	</div>
 </div>

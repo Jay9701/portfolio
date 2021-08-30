@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.pjh.domain.MemberDTO;
 import com.pjh.service.MemberService;
 
 @Controller
@@ -15,10 +16,29 @@ import com.pjh.service.MemberService;
 public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 	
+	@Autowired
+	private MemberService service;
+
 	
 	@GetMapping("register")
 	public void register() {
 		logger.info("register");
 	}
 
+	@PostMapping("createAccount")
+	public String insertMember(MemberDTO member) {
+		logger.info("creating...");
+		service.createAccount(member);
+		return "redirect:/member/login";
+	}
+	
+	@GetMapping("login")
+	public void login() {
+		logger.info("login page");
+	}
+	
+	@PostMapping("login")
+	public void checkLogin(MemberDTO member) {
+		logger.info("logging in...");
+	}
 }
