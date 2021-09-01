@@ -1,7 +1,7 @@
 package com.pjh.domain;
 
 public class MemberDTO {
-	private int mno;
+	private Integer mno;
 	private String id;
 	private String pw;
 	private String name;
@@ -12,7 +12,7 @@ public class MemberDTO {
 	public int getMno() {
 		return mno;
 	}
-	public void setMno(int mno) {
+	public void setMno(Integer mno) {
 		this.mno = mno;
 	}
 	public String getId() {

@@ -9,4 +9,12 @@
 		values(#{id},#{pw},#{name},#{birth},#{gender})
 	</insert>
 	
+	<select id="login" resultType="integer">
+		select mno from tbl_member where id = #{id} and pw = #{pw}
+	</select>
+	
+	<select id="memberInfo" resultType="com.pjh.domain.MemberDTO">
+		select * from tbl_member where id = #{id} and pw = #{pw}
+	</select>
+	
 </mapper>

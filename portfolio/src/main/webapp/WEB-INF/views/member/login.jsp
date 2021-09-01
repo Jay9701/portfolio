@@ -10,9 +10,9 @@
 <body>
 <div id="wrap" style="background-color: #e6eeff;">
 	<div class="wrap_in" style="width: 960px; margin: 0 auto; background-color: white; text-align: center">
-		<div class="logo"><h1><a href="#">logo</a></h1></div>
+		<div class="logo"><h1><a href="/portfolio">logo</a></h1></div>
 		<div>
-		<form action="login" method="post">
+		<form action="memberCheck" method="post">
 			<table style="margin: 0 auto;">
 				<tr>
 					<th><label for="id">아이디 : </label></th>
@@ -28,9 +28,10 @@
 			</table>
 		</form>
 		</div>
-		<footer>
-		</footer>
 	</div>
+	<footer>
+		<jsp:include page="../module/footer.jsp"></jsp:include>
+	</footer>
 </div>
 </body>
 </html>

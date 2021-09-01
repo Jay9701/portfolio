@@ -3,8 +3,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="./resources/css/footer.css">
+	<meta charset="UTF-8">
+	<style>
+		footer{
+			background-color: silver;
+		}
+		
+		.ft_in{
+			width: 1280px;
+			margin: 0 auto;
+		}
+		
+		.ft_nav{
+			width: 656px;
+			margin: 0 auto;
+		}
+		
+		.ft_nav ul{
+			display: flex;
+		}
+		
+		.ft_nav ul li:after{
+			content:'';
+			background-color: #666;
+			display: inline-block;
+			width: 1px;
+			height: 12px;
+			margin: 3px 5px 0;
+		}
+		
+		.ft_nav ul li:last-child:after{
+			display: none;
+		}
+		
+		.ft_info{
+			display: flex;
+		}
+</style>
 </head>
 <body>
 	<div class="ft_in">

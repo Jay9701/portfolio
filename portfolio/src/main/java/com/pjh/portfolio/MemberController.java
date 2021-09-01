@@ -1,5 +1,7 @@
 package com.pjh.portfolio;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +39,23 @@ public class MemberController {
 		logger.info("login page");
 	}
 	
-	@PostMapping("login")
-	public void checkLogin(MemberDTO member) {
+	@PostMapping("memberCheck")
+	public String memberCheck(MemberDTO member,HttpSession session) {
 		logger.info("logging in...");
+		MemberDTO memberInfo = service.memberInfo(member);
+		session.setAttribute("memberInfo", memberInfo);
+		if(memberInfo != null) {
+			logger.info("success!");
+			return "redirect:/";
+		}else {
+			return "redirect:/member/login?msg=fail";
+		}
+	}
+	
+	@GetMapping("logout")
+	public String logout(HttpSession session) {
+		logger.info("logout");
+		session.invalidate();
+		return "redirect:/member/login";
 	}
 }

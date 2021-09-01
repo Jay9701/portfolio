@@ -20,4 +20,13 @@ public class MemberServiceImpl implements MemberService{
 		logger.info("createAccount : " + member);
 		mapper.insert(member);
 	}
+	// 로그인 구현부
+	public Integer memberCheck(MemberDTO member) {
+		logger.info("LoginAccount : " + member);
+		return mapper.login(member);
+	}
+	// 로그인 정보 저장
+	public MemberDTO memberInfo(MemberDTO member) {
+		return mapper.memberInfo(member);
+	}
 }
