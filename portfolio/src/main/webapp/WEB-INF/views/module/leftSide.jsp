@@ -23,8 +23,8 @@
 	<div>
 		<dl>
 			<dt>커뮤니티 게시판</dt>
-			<dd><a href="freeB" >자유게시판</a></dd>
-			<dd><a href="issueB">사건사고 게시판</a></dd>
+			<dd><a href="/portfolio/board?category=freeBoard" >자유게시판</a></dd>
+			<dd><a href="/portfolio/board?category=issueBoard">사건사고 게시판</a></dd>
 			<dt>정보 게시판</dt>
 			<dd>팁과 노하우 게시판</dd>
 		</dl>

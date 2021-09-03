@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pjh.mapper.BoardMapper">
+
+	<insert id="insert">
+		insert into tbl_board(category, sub_category, title, content, writer)
+		values(#{category}, #{sub_category}, #{title}, #{content}, #{writer})
+	</insert>
+
+	<select id="selectList" resultType="com.pjh.domain.BoardDTO">
+	<![CDATA[
+		select * from tbl_board where bno > 0 and category=#{category}
+	]]>
+	</select>
+
+</mapper>

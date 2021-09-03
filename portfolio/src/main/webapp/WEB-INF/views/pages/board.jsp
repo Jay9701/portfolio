@@ -23,16 +23,18 @@
 					<jsp:include page="../module/leftSide.jsp"></jsp:include>
 				</div>
 				<div class="ctn_content">
+					<!-- 자유 게시판 -->
+					<% if(request.getParameter("category").equals("freeBoard")) {%>
+					<jsp:include page="../module/freeBoard.jsp"></jsp:include>
 					
+					<!-- 이슈/토론/버그 게시판 -->
+					<% }else if(request.getParameter("category").equals("issueBoard")) {%>
+					<jsp:include page="../module/issueBoard.jsp"></jsp:include>
 					
-					
-					
-					
-					issue
-					
-					
-					
-					
+					<% } %>
+					<div class="btn_write" style="border:1px solid; width:50px; text-align:center;">
+						<a href="board/write?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">글쓰기</a>
+					</div>
 					
 					
 				</div>

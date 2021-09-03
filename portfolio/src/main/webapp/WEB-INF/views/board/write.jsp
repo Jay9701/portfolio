@@ -2,8 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="ko">
 <head>
-    <link rel="stylesheet" href="./resources/css/style.css">
-    <link rel="stylesheet" href="./resources/css/base.css">
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/base.css">
 	<title>portfolio</title>
 	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 </head>
@@ -23,18 +23,7 @@
 					<jsp:include page="../module/leftSide.jsp"></jsp:include>
 				</div>
 				<div class="ctn_content">
-					
-					
-					
-					
-					
-					free
-					
-					
-					
-					
-					
-					
+					<jsp:include page="../module/md_write.jsp"></jsp:include>
 				</div>
 			</div>
 		</div>

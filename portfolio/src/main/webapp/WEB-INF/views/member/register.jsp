@@ -10,7 +10,7 @@
 <body>
 <div id="wrap" style="background-color: #e6eeff;">
 	<div class="wrap_in" style="width: 960px; margin: 0 auto; background-color: white; text-align: center">
-		<div class="logo"><h1><a href="#">logo</a></h1></div>
+		<div class="logo"><h1><a href="/portfolio">logo</a></h1></div>
 		<div>
 		<form action="createAccount" method="post">
 			<table style="margin: 0 auto;">

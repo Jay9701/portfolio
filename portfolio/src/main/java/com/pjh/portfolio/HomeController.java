@@ -21,18 +21,4 @@ public class HomeController {
 		
 		return "pages/home";
 	}
-
-	@GetMapping("/freeB")
-	public String freeBoard() {
-		logger.info("free");
-		
-		return "pages/freeB";
-	}
-
-	@GetMapping("/issueB")
-	public String issueBoard() {
-		logger.info("issue");
-		
-		return "pages/issueB";
-	}
 }
