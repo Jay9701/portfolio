@@ -17,12 +17,31 @@ public class BoardServiceImpl implements BoardService {
 	private BoardMapper mapper;
 	
 	public void insert(BoardDTO board) {
-		logger.info("insert success!");
+		logger.info("mapper : insert");
 		mapper.insert(board);
 	}
 
 	public ArrayList<BoardDTO> selectList(String category) {
-		logger.info("select List");
+		logger.info("mapper : select List");
 		return mapper.selectList(category);
+	}
+
+	public ArrayList<BoardDTO> selectListSub(String sub_category, String category) {
+		logger.info("mapper : select List with sub");
+		return mapper.selectListSub(sub_category, category);
+	}
+
+	public BoardDTO detail(int bno) {
+		logger.info("mapper : detail");
+		return mapper.detail(bno);
+	}
+
+	public void updateView(int bno) {
+		logger.info("mapper : updateView");
+		mapper.updateView(bno);
+	}
+
+	public void updateRecomend(int bno) {
+		mapper.updateRecomend(bno);
 	}
 }

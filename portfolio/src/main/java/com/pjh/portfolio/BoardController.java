@@ -25,10 +25,17 @@ public class BoardController {
 	private BoardService service;
 	
 	@GetMapping("")
-	public String Board(Model model, @RequestParam("category") String category) {
+	public String Board(Model model,HttpServletRequest request) {
+		String category = request.getParameter("category");
+		String sub_category = request.getParameter("sub");
 		logger.info("boardList");
-		
-		model.addAttribute("list", service.selectList(category));
+		logger.info(category);
+		if(sub_category==null) {
+			model.addAttribute("list", service.selectList(category));
+		}else {
+			logger.info(sub_category);
+			model.addAttribute("list", service.selectListSub(sub_category, category));
+		}
 
 		return "pages/board";
 	}
@@ -45,7 +52,26 @@ public class BoardController {
 	@PostMapping("insert")
 	public String insert(BoardDTO board, HttpServletRequest request) {
 		logger.info("insert" + board);
+		
+		String contents = ((String)board.getContent().replace("\r\n","<br>"));
+        board.setContent(contents);
+		
 		service.insert(board);
+
 		return "redirect:/board?category="+request.getParameter("category");
+	}
+	
+	@GetMapping("detail")
+	public void detail(@RequestParam("bno") int bno, Model model) {
+		logger.info("detail " + bno);
+		service.updateView(bno);
+		model.addAttribute("board", service.detail(bno));
+	}
+	
+	@GetMapping("recomend")
+	public String recomend(@RequestParam("bno") int bno) {
+		logger.info("recomend " + bno);
+		service.updateRecomend(bno);
+		return "redirect:/board/detail?bno=" + bno;
 	}
 }

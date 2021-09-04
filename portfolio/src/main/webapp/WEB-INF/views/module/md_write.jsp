@@ -57,7 +57,7 @@
 				<table>
 					<tr>
 						<td width="100%" align="right">
-							<span><%= member.getName() %><input type="hidden" name="writer" value="<%= member.getName() %>"></span>
+							<span><%= member.getNickName() %><input type="hidden" name="writer" value="<%= member.getNickName() %>"></span>
 						</td>
 					</tr>
 				</table>

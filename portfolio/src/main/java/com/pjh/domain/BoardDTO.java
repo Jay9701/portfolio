@@ -1,15 +1,26 @@
 package com.pjh.domain;
 
 public class BoardDTO {
+	
 	private int bno;
+	
 	private String category;
+	
 	private String sub_category;
+	
 	private String title;
+	
 	private String content;
+	
 	private String writer;
+	
 	private String regdate;
+	
 	private int view;
+	
 	private int recomend;
+	
+	
 	
 	public int getBno() {
 		return bno;

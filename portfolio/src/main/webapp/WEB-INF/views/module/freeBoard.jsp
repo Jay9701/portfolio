@@ -13,9 +13,7 @@
 .sub_category_select li{
 	width: 40px;
 }
-.sub_category_select li:hover{
-	cursor: pointer;
-}
+
 .boardList tr:hover {
 	background-color: #f2f2f2;
 }
@@ -32,11 +30,10 @@
 			<tr height="30px">
 				<td>
 					<ul class="sub_category_select">
-						<li>전체</li>
-						<li>잡담</li>
-						<li>정보</li>
-						<li>질문</li>
-						<li>기타</li>
+						<li><a href="/portfolio/board?category=freeBoard">전체</a></li>
+						<li><a href="/portfolio/board?category=freeBoard&sub=잡담">잡담</a></li>
+						<li><a href="/portfolio/board?category=freeBoard&sub=공지">공지</a></li>
+						<li><a href="/portfolio/board?category=freeBoard&sub=기타">기타</a></li>
 					</ul>
 				</td>
 			</tr>
@@ -58,7 +55,7 @@
 						<tr height="30px">
 							<td style="text-align: center">${board.bno}</td>
 							<td>
-							<td><span style="color: #aaa">[${board.sub_category}]</span>${board.title}</td>
+							<td><a href="board/detail?bno=${board.bno}"><span style="color: #aaa">[${board.sub_category}]</span>${board.title}</a></td>
 							<td>${board.writer}</td>
 							<td style="text-align: center">${board.regdate}</td>
 							<td style="text-align: center">${board.view}</td>

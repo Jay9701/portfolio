@@ -29,7 +29,7 @@ public class MemberController {
 
 	@PostMapping("createAccount")
 	public String insertMember(MemberDTO member) {
-		logger.info("creating...");
+		logger.info("creating..." + member);
 		service.createAccount(member);
 		return "redirect:/member/login";
 	}
@@ -56,6 +56,6 @@ public class MemberController {
 	public String logout(HttpSession session) {
 		logger.info("logout");
 		session.invalidate();
-		return "redirect:/member/login";
+		return "redirect:/";
 	}
 }

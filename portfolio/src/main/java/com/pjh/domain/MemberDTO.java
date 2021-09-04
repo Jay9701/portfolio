@@ -7,9 +7,11 @@ public class MemberDTO {
 	private String name;
 	private String birth;
 	private String gender;
+	private String tel;
 	private String email;
 	private String nickName;
-	public int getMno() {
+	
+	public Integer getMno() {
 		return mno;
 	}
 	public void setMno(Integer mno) {
@@ -45,6 +47,12 @@ public class MemberDTO {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
 	public String getEmail() {
 		return email;
 	}
@@ -57,9 +65,11 @@ public class MemberDTO {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
+	
 	@Override
 	public String toString() {
 		return "MemberDTO [mno=" + mno + ", id=" + id + ", pw=" + pw + ", name=" + name + ", birth=" + birth
-				+ ", gender=" + gender + ", email=" + email + ", nickName=" + nickName + "]";
+				+ ", gender=" + gender + ", tel=" + tel + ", email=" + email + ", nickName=" + nickName + "]";
 	}
+	
 }
