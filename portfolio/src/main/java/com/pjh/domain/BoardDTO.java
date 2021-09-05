@@ -18,7 +18,7 @@ public class BoardDTO {
 	
 	private int view;
 	
-	private int recomend;
+	private int recommend;
 	
 	
 	
@@ -70,17 +70,17 @@ public class BoardDTO {
 	public void setView(int view) {
 		this.view = view;
 	}
-	public int getRecomend() {
-		return recomend;
+	public int getRecommend() {
+		return recommend;
 	}
-	public void setRecomend(int recomend) {
-		this.recomend = recomend;
+	public void setRecommend(int recommend) {
+		this.recommend = recommend;
 	}
 	
 	@Override
 	public String toString() {
 		return "BoardDTO [bno=" + bno + ", category=" + category + ", sub_category=" + sub_category + ", title=" + title
 				+ ", content=" + content + ", writer=" + writer + ", regdate=" + regdate + ", view=" + view
-				+ ", recomend=" + recomend + "]";
+				+ ", recommend=" + recommend + "]";
 	}
 }

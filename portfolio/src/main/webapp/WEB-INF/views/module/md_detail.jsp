@@ -13,7 +13,7 @@
 		<div>${board.regdate}</div>
 		<div>
 			<span>조회 : </span>${board.view}
-			<span>추천 : </span>${board.recomend}
+			<span>추천 : </span>${board.recommend}
 		</div>
 	</div>
 	<div class="article_ctn" style="padding: 20px 30px">
@@ -30,11 +30,11 @@
 		</div>
 		<div style="margin-bottom: 30px;">
 			<div style="border: 1px solid #ccc; border-radius: 5px; width: 80px; height: 50px; margin: 0 auto;">
-				<a onclick=recomendClick() style="display: block; width: 100%; line-height: 50px; text-align: center; font-weight: bold; color: #d91c2b">추천 ${board.recomend}</a>
+				<a onclick=recommendClick() style="display: block; width: 100%; line-height: 50px; text-align: center; font-weight: bold; color: #d91c2b; cursor: pointer;">추천 ${board.recommend}</a>
 				<script type="text/javascript">
-					function recomendClick(){
+					function recommendClick(){
 						if(confirm("해당 게시글을 추천하시겠습니까?")){
-						location.href="recomend?bno=${board.bno}";
+						location.href="recommend?bno=${board.bno}";
 						}
 					}
 				</script>

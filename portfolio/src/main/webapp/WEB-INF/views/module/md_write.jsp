@@ -28,12 +28,10 @@
 							<% }else if(request.getParameter("category").equals("issueBoard")){ %>
 							<select name="sub_category">
 								<option>분류</option>
-								<option>서버1</option>
-								<option>서버2</option>
-								<option>서버3</option>
-								<option>서버4</option>
-								<option>서버5</option>
-								<option>서버6</option>
+								<option>이슈</option>
+								<option>토론</option>
+								<option>버그</option>
+								<option>기타</option>
 							</select>
 							<% }else{ %>
 							<select name="sub_category">

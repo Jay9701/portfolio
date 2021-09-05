@@ -45,11 +45,11 @@
 		</p>
 		<a href="member/login"><p style="background-color: #4a4a4a; width: 100px; line-height:30px; margin: 0 auto 20px; text-align: center; color: white;">로그인</p></a>
 		<ul style="display: flex; justify-content: space-evenly; width: 100%; font-size: 11px; color: #ccc; opacity: 0.8;">
-			<li><a>회원가입</a></li>
+			<li><a href="member/register">회원가입</a></li>
 			<li><a>ID/PW 찾기</a></li>
 		</ul>
 		<%}else{ %>
-		<%= member.getName() %> 님 환영합니다.
+		<%= member.getNickName() %> 님 환영합니다.
 		<%} %>
 	</div>
 	<nav class="board_nav">

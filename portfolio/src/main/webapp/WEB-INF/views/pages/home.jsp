@@ -30,11 +30,7 @@
 				
 				<div class="ctn_content">
 					
-					
-					
-					home
-					
-					
+					<jsp:include page="../module/md_main.jsp"></jsp:include>
 					
 				</div>
 				

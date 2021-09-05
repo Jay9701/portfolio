@@ -20,6 +20,18 @@
 		select * from tbl_board where bno > 0 and sub_category = #{sub_category} and category = #{category} order by bno desc
 	]]>
 	</select>
+
+	<select id="selectListConfirm" resultType="com.pjh.domain.BoardDTO">
+	<![CDATA[
+		select * from tbl_board where bno > 0 and category = #{category} and confirm = 1 order by bno desc
+	]]>
+	</select>
+
+	<select id="selectListRecommend" resultType="com.pjh.domain.BoardDTO">
+	<![CDATA[
+		select * from tbl_board where bno > 0 and category = #{category} and recommend >= 10 order by bno desc
+	]]>
+	</select>
 	
 	<select id="detail" resultType="com.pjh.domain.BoardDTO">
 		select * from tbl_board where bno = #{bno}
@@ -29,8 +41,8 @@
 		update tbl_board set view = view + 1 where bno = #{bno};
 	</update>
 	
-	<update id="updateRecomend">
-		update tbl_board set recomend = recomend + 1 where bno = #{bno};
+	<update id="updateRecommend">
+		update tbl_board set recommend = recommend + 1 where bno = #{bno};
 	</update>
 
 </mapper>

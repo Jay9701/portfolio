@@ -28,10 +28,19 @@ public class BoardController {
 	public String Board(Model model,HttpServletRequest request) {
 		String category = request.getParameter("category");
 		String sub_category = request.getParameter("sub");
+		String fillter = request.getParameter("fillter");
 		logger.info("boardList");
 		logger.info(category);
 		if(sub_category==null) {
-			model.addAttribute("list", service.selectList(category));
+			if(fillter==null) {
+				model.addAttribute("list", service.selectList(category));
+			}else if(fillter.equals("confirm")) {
+				logger.info(fillter);
+				model.addAttribute("list", service.selectListConfirm(category));
+			}else if(fillter.equals("recommend")) {
+				logger.info(fillter);
+				model.addAttribute("list", service.selectListRecommend(category));
+			}
 		}else {
 			logger.info(sub_category);
 			model.addAttribute("list", service.selectListSub(sub_category, category));
@@ -68,10 +77,10 @@ public class BoardController {
 		model.addAttribute("board", service.detail(bno));
 	}
 	
-	@GetMapping("recomend")
-	public String recomend(@RequestParam("bno") int bno) {
-		logger.info("recomend " + bno);
-		service.updateRecomend(bno);
+	@GetMapping("recommend")
+	public String recommend(@RequestParam("bno") int bno) {
+		logger.info("recommend " + bno);
+		service.updateRecommend(bno);
 		return "redirect:/board/detail?bno=" + bno;
 	}
 }

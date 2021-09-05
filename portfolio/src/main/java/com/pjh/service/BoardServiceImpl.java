@@ -30,6 +30,15 @@ public class BoardServiceImpl implements BoardService {
 		logger.info("mapper : select List with sub");
 		return mapper.selectListSub(sub_category, category);
 	}
+	
+	public ArrayList<BoardDTO> selectListConfirm(String category) {
+		return mapper.selectListConfirm(category);
+	}
+	
+	public ArrayList<BoardDTO> selectListRecommend(String category) {
+		return mapper.selectListRecommend(category);
+		
+	}
 
 	public BoardDTO detail(int bno) {
 		logger.info("mapper : detail");
@@ -41,7 +50,7 @@ public class BoardServiceImpl implements BoardService {
 		mapper.updateView(bno);
 	}
 
-	public void updateRecomend(int bno) {
-		mapper.updateRecomend(bno);
+	public void updateRecommend(int bno) {
+		mapper.updateRecommend(bno);
 	}
 }

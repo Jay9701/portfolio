@@ -12,7 +12,9 @@ public interface BoardMapper {
 	public void insert(BoardDTO board);
 	public ArrayList<BoardDTO> selectList(String category);
 	public ArrayList<BoardDTO> selectListSub(@Param("sub_category") String sub_category, @Param("category") String categoty);
+	public ArrayList<BoardDTO> selectListConfirm(String category);
+	public ArrayList<BoardDTO> selectListRecommend(String category);
 	public BoardDTO detail(int bno);
 	public void updateView(int bno);
-	public void updateRecomend(int bno);
+	public void updateRecommend(int bno);
 }

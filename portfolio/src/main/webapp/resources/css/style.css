@@ -21,7 +21,7 @@
 }
 
 .wrap_in{
-	width: 1300px;
+	width: 1280px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
@@ -41,6 +41,7 @@
 
 #container{
 	display: flex;
+	min-height: 1000px;
 }
 
 .ctn_left_side{

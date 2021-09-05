@@ -32,11 +32,6 @@
 					<jsp:include page="../module/issueBoard.jsp"></jsp:include>
 					
 					<% } %>
-					<div class="btn_write" style="border:1px solid; width:50px; text-align:center;">
-						<a href="board/write?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">글쓰기</a>
-					</div>
-					
-					
 				</div>
 			</div>
 		</div>
