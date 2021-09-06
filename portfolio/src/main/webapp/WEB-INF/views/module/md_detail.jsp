@@ -22,7 +22,7 @@
 				[${board.sub_category}]
 			</div>
 		</div>
-		<div style="margin-bottom: 160px; font-size: 22px; color: #b63126">
+		<div style="margin-bottom: 160px; font-size: 22px; color: #b63126; word-break: break-all; max-width: 500px;">
 			<h2>${board.title}</h2>
 		</div>
 		<div style="font-size: 16px; margin-bottom: 80px;">
