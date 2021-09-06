@@ -45,6 +45,25 @@
 .boardList tr:hover {
 	background-color: #f2f2f2;
 }
+
+.pagination{
+	display: flex;
+	justify-content: center;
+}
+
+.pagination li{
+	padding: 4px 10px;
+	cursor: pointer;
+	margin: 0 2px;
+	font-size: 13px;
+}
+
+.pagination li.active{
+	font-weight: bold;
+	color: #0800e6;
+	border: 1px solid #eee;
+}
+
 </style>
 </head>
 <body>
@@ -113,8 +132,8 @@
 			<tr style="height: 1px; background-color: #cecece;"><td colspan="100%"></td></tr>
 			<tr>
 				<td>
-					<table class="boardList" cellspacing="0" width="100%" style="font-size: 14px">
-						<tr height="30px">
+					<table class="boardList" cellspacing="0" width="100%" style="font-size: 14px;">
+						<tr height="35px">
 							<th width="50px">번호</th>
 							<th width="30px">
 							<th width="420px">제목</th>
@@ -124,8 +143,8 @@
 							<th>추천</th>
 						</tr>
 						<tr style="height: 1px; background-color: #cecece;"><td colspan="100%"></td></tr>
-						<c:forEach items="${list}" var="board">
-						<tr height="30px">
+						<c:forEach items="${list}" var="board" begin="${page-30}" end="${page-1}">
+						<tr height="35px">
 							<td style="text-align: center">${board.bno}</td>
 							<td>
 							<td><a href="board/detail?bno=${board.bno}"><span style="color: #aaa">[${board.sub_category}]</span>${board.title}</a></td>
@@ -138,6 +157,94 @@
 						</c:forEach>
 					</table>
 				</td>
+			</tr>
+			<tr>
+				<td style="display: flex; justify-content: flex-end; margin: 30px 0 10px;">
+					<div class="btn_list" style="border: 1px solid #999; border-radius: 5px; padding: 5px 10px; margin-right: 5px; color: #999">
+						<a href="board?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">목록</a>
+					</div>
+					<div class="btn_write" style="border:1px solid; border-radius: 5px; padding: 5px 20px; margin-right: 5px; background-color: #333; color: white">
+						<a href="board/write?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">글쓰기</a>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<ul class="pagination" style="margin-bottom: 20px">
+						<c:if test="${pageMaker.prev}">
+							<li class="paginate_button previous" onclick=pagePrev()>이전</li>
+						</c:if>
+						<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+							<li class="paginate_button page-item" onclick=pageNav(${num})>${num}</li>
+						</c:forEach>
+						<c:if test="${pageMaker.next}">
+							<li class="paginate_button next" onclick=pageNext()>다음</li>
+						</c:if>
+					</ul>
+				</td>
+				<script type="text/javascript">
+					function pageNav(page) {
+						var url = window.location.href + "";
+						var pos = url.lastIndexOf("&p");
+						if(pos < 0){
+							var url = url + "&p=" + page;
+						}else{
+							var url = url.substring(0,pos) + "&p=" + page;	
+						}
+						location.href=url;
+					}
+					
+					function pageNext() {
+						var url = window.location.href + "";
+						var pos = url.lastIndexOf("&p");
+						if(pos < 0){
+							var url = url + "&p=1";
+						}else{
+							var url = url.substring(0,pos) + "&p=" + (url.substring(pos+3)*1+1);
+						}
+						location.href=url;
+					}
+					
+					var num = getParameter("p");
+					if(num == ""){
+						$(".page-item:nth-child(1)").addClass('active');
+					}else{
+						$(document).ready(function (){
+							switch (num % 10) {
+							case 1:
+								$(".page-item:nth-child(1)").addClass('active');
+								break;
+							case 2:
+								$(".page-item:nth-child(2)").addClass('active');
+								break;
+							case 3:
+								$(".page-item:nth-child(3)").addClass('active');
+								break;
+							case 4:
+								$(".page-item:nth-child(4)").addClass('active');
+								break;
+							case 5:
+								$(".page-item:nth-child(5)").addClass('active');
+								break;
+							case 6:
+								$(".page-item:nth-child(6)").addClass('active');
+								break;
+							case 7:
+								$(".page-item:nth-child(7)").addClass('active');
+								break;
+							case 8:
+								$(".page-item:nth-child(8)").addClass('active');
+								break;
+							case 9:
+								$(".page-item:nth-child(9)").addClass('active');
+								break;
+							case 0:
+								$(".page-item:nth-child(0)").addClass('active');
+								break;
+							}
+						});
+					}
+				</script>
 			</tr>
 		</table>
 	

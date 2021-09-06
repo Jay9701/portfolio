@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.pjh.domain.PageDTO;
 import com.pjh.domain.BoardDTO;
+import com.pjh.domain.Criteria;
 import com.pjh.service.BoardService;
 
 @Controller
@@ -25,27 +27,49 @@ public class BoardController {
 	private BoardService service;
 	
 	@GetMapping("")
-	public String Board(Model model,HttpServletRequest request) {
+	public String Board(Model model,HttpServletRequest request, Criteria cri) {
+		
+		
 		String category = request.getParameter("category");
 		String sub_category = request.getParameter("sub");
 		String fillter = request.getParameter("fillter");
+		int count = 0;
+		
+		
 		logger.info("boardList");
 		logger.info(category);
+		
+		logger.info(cri+"");
+		
+		
+		
 		if(sub_category==null) {
 			if(fillter==null) {
+				count = service.getTotalCount(cri,category);
 				model.addAttribute("list", service.selectList(category));
 			}else if(fillter.equals("confirm")) {
+				count = service.getConfirmCount(cri,category);
 				logger.info(fillter);
 				model.addAttribute("list", service.selectListConfirm(category));
 			}else if(fillter.equals("recommend")) {
+				count = service.getRecommendCount(cri,category);
 				logger.info(fillter);
 				model.addAttribute("list", service.selectListRecommend(category));
 			}
 		}else {
+			count = service.getSubCount(cri,category,sub_category);
 			logger.info(sub_category);
 			model.addAttribute("list", service.selectListSub(sub_category, category));
 		}
 
+		if(request.getParameter("p")==null) {
+			model.addAttribute("page", cri.getAmount());
+		}else {
+			int page = Integer.parseInt(request.getParameter("p"))*cri.getAmount();
+			model.addAttribute("page", page);
+		}
+
+		model.addAttribute("pageMaker", new PageDTO(cri,count));
 		return "pages/board";
 	}
 	

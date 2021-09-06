@@ -8,6 +8,22 @@
 		insert into tbl_board(category, sub_category, title, content, writer)
 		values(#{category}, #{sub_category}, #{title}, #{content}, #{writer})
 	</insert>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from tbl_board where bno > 0 and category = #{category}
+	</select>
+	
+	<select id="getConfirmCount" resultType="int">
+		select count(*) from tbl_board where bno > 0 and category = #{category} and confirm = 1
+	</select>
+	
+	<select id="getRecommendCount" resultType="int">
+		select count(*) from tbl_board where bno > 0 and category = #{category} and recommend >= 10
+	</select>
+	
+	<select id="getSubCount" resultType="int">
+		select count(*) from tbl_board where bno > 0 and sub_category = #{sub_category} and category = #{category}
+	</select>
 
 	<select id="selectList" resultType="com.pjh.domain.BoardDTO">
 	<![CDATA[
