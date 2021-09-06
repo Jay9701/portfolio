@@ -14,7 +14,17 @@ confirm boolean default 0
 );
 
 insert into tbl_board(category,sub_category,title,content,writer)
-values('freeBoard','잡담','testTitle','testContent','user');
+values('freeBoard','잡담','testTitle','testContent','user'),
+('freeBoard','잡담','testTitle','testContent','user'),
+('freeBoard','잡담','testTitle','testContent','user'),
+('freeBoard','기타','testTitle','testContent','user'),
+('freeBoard','기타','testTitle','testContent','user'),
+('freeBoard','잡담','testTitle','testContent','user'),
+('freeBoard','잡담','testTitle','testContent','user'),
+('freeBoard','잡담','testTitle','testContent','user'),
+('freeBoard','잡담','testTitle','testContent','user'),
+('freeBoard','기타','testTitle','testContent','user'),
+('freeBoard','잡담','testTitle','testContent','user');
 
 insert into tbl_board(category,sub_category,title,content,writer)
 values('freeBoard','기타','testTitle','testContent','user');
@@ -51,8 +61,9 @@ SELECT @ROWNUM := @ROWNUM + 1 AS rownum, board.* FROM
         (SELECT * FROM tbl_board ORDER BY bno DESC) board, 
         (SELECT @ROWNUM := 0 ) rownum;
         
-		select @rownum:=@rownum+1 as rownum, bno, title, content, writer, regdate
+select * from
+		(select @rownum:=@rownum+1 as rownum, tbl_board.*
 		from (select @rownum:=0) as rownum
-		, tbl_board order by bno desc;
+		, tbl_board order by bno desc) pageboard;
 
 select count(*) from tbl_board where category='freeboard';

@@ -75,7 +75,7 @@
 		<table cellspacing="0" width="100%" style="font-size: 14px;">
 			<tr>
 				<td style="display: flex; justify-content: flex-end; margin-bottom: 10px">
-					<div class="btn_list" style="border: 1px solid #999; border-radius: 5px; padding: 5px 10px; margin-right: 5px; color: #999">
+					<div class="btn_list" style="border: 1px solid #999; border-radius: 5px; padding: 5px 10px; margin-right: 5px; color: #999;">
 						<a href="board?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">목록</a>
 					</div>
 					<div class="btn_write" style="border:1px solid; border-radius: 5px; padding: 5px 20px; margin-right: 5px; background-color: #333; color: white">
