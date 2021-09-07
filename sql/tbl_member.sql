@@ -6,6 +6,7 @@ id varchar(20) unique,
 pw varchar(20),
 name varchar(10),
 birth date,
+tel varchar(12),
 gender varchar(3),
 email varchar(50),
 nickName varchar(20)

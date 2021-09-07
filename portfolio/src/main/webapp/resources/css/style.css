@@ -21,7 +21,7 @@
 }
 
 .wrap_in{
-	width: 1300px;
+	width: 1280px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
@@ -32,29 +32,25 @@
 }
 
 #wrap_right{
-	background-color: blue;
 	width: 20%;
-	height: 300px;
 }
 
 /*------------------------------------------------------------------------------*/
 
 #container{
 	display: flex;
+	min-height: 1000px;
 }
 
 .ctn_left_side{
-	width: 250px;
-}
-
-.accountBox{
-	height: 220px;
-	background-color: #cafe6e;
+	width: 20%;
+	height: inherit;
+	background: #19253d;
 }
 
 .ctn_content{
 	background-color: white;
-	width: 100%;
+	width: 80%;
 	padding: 8px;
 }
 

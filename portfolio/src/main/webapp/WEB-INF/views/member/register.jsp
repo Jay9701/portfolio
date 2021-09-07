@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<title>회원가입</title>
     <link rel="stylesheet" href="../resources/css/base.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="wrap" style="background-color: #e6eeff;">
@@ -15,50 +16,47 @@
 		<form action="createAccount" method="post">
 			<table style="margin: 0 auto;">
 				<tr>
-					<th><label for="id">아이디 : </label></th>
-					<td><input type="text" name="id" id="id"></td>
+					<th>아이디 : </th>
+					<td><input type="text" name="id"></td>
 				</tr>
 				<tr>
-					<th><label for="pw">비밀번호 : </label></th>
-					<td><input type="password" name="pw" id="pw"></td>
+					<th>비밀번호 : </th>
+					<td><input type="password" name="pw"></td>
 				</tr>
 				<tr>
-					<th><label for="repw">비밀번호 확인 : </label></th>
-					<td><input type="password" name="repw" id="repw"></td>
+					<th>비밀번호 확인 : </th>
+					<td><input type="password" name="repw"></td>
 				</tr>
 				<tr>
-					<th><label for="name">이름 : </label></th>
-					<td><input type="text" name="name" id="name"></td>
+					<th>이름 : </th>
+					<td><input type="text" name="name"></td>
 				</tr>
 				<tr>
-					<th><label for="birth">생년월일 : </label></th>
-					<td><input type="date" name="birth" id="birth"></td>
+					<th>생년월일 : </th>
+					<td><input type="date" name="birth"></td>
 				</tr>
 				<tr>
-					<th>성별 : </label></th>
+					<th>성별 : </th>
 					<td>
 						<label>남자<input type="radio" value="남" name="gender"></label>
 						<label>여자<input type="radio" value="여" name="gender"></label>
 					</td>
 				</tr>
 				<tr>
-					<th><label for="email">이메일 : </label></th>
+					<th>전화번호 : </th>
 					<td>
-						<input type="text" name="email" id="email">
-						<input type="text" name="email2" id="email2">
-						<select>
-							<option>직접입력</option>
-							<option>naver.com</option>
-							<option>gmail.com</option>
-							<option>nate.com</option>
-							<option>daum.net</option>
-							<option>hanmail.com</option>
-						</select>
+						<input type="text" name="tel">
 					</td>
 				</tr>
 				<tr>
-					<th><label for="nickName">닉네임 : </label></th>
-					<td><input type="text" name="nickName" id="nickName"></td>
+					<th>이메일 : </th>
+					<td>
+						<input type="text" name="email">
+					</td>
+				</tr>
+				<tr>
+					<th>닉네임 : </th>
+					<td><input type="text" name="nickName"></td>
 				</tr>
 				<tr>
 					<th colspan="2">

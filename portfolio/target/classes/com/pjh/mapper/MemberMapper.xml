@@ -5,8 +5,8 @@
 <mapper namespace="com.pjh.mapper.MemberMapper">
 
 	<insert id="insert">
-		insert into tbl_member(id,pw,name,birth,gender)
-		values(#{id},#{pw},#{name},#{birth},#{gender})
+		insert into tbl_member(id,pw,name,birth,gender,tel,email,nickName)
+		values(#{id},#{pw},#{name},#{birth},#{gender},#{tel},#{email},#{nickName})
 	</insert>
 	
 	<select id="login" resultType="integer">

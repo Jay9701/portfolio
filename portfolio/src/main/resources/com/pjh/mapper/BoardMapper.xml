@@ -8,11 +8,63 @@
 		insert into tbl_board(category, sub_category, title, content, writer)
 		values(#{category}, #{sub_category}, #{title}, #{content}, #{writer})
 	</insert>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from tbl_board where bno > 0 and category = #{category}
+	</select>
+	
+	<select id="getConfirmCount" resultType="int">
+		select count(*) from tbl_board where bno > 0 and category = #{category} and confirm = 1
+	</select>
+	
+	<select id="getRecommendCount" resultType="int">
+		select count(*) from tbl_board where bno > 0 and category = #{category} and recommend >= 10
+	</select>
+	
+	<select id="getSubCount" resultType="int">
+		select count(*) from tbl_board where bno > 0 and sub_category = #{sub_category} and category = #{category}
+	</select>
 
 	<select id="selectList" resultType="com.pjh.domain.BoardDTO">
 	<![CDATA[
-		select * from tbl_board where bno > 0 and category=#{category}
+		select * from tbl_board where bno > 0 and category = #{category} order by bno desc
 	]]>
 	</select>
+
+	<select id="selectListSub" resultType="com.pjh.domain.BoardDTO">
+	<![CDATA[
+		select * from tbl_board where bno > 0 and sub_category = #{sub_category} and category = #{category} order by bno desc
+	]]>
+	</select>
+
+	<select id="selectListConfirm" resultType="com.pjh.domain.BoardDTO">
+	<![CDATA[
+		select * from tbl_board where bno > 0 and category = #{category} and confirm = 1 order by bno desc
+	]]>
+	</select>
+
+	<select id="selectListRecommend" resultType="com.pjh.domain.BoardDTO">
+	<![CDATA[
+		select * from tbl_board where bno > 0 and category = #{category} and recommend >= 10 order by bno desc
+	]]>
+	</select>
+	
+	<select id="detail" resultType="com.pjh.domain.BoardDTO">
+		select * from tbl_board where bno = #{bno}
+	</select>
+	
+	<update id="updateView">
+		update tbl_board set view = view + 1 where bno = #{bno};
+	</update>
+	
+	<update id="updateRecommend">
+		update tbl_board set recommend = recommend + 1 where bno = #{bno};
+	</update>
+	
+	<update id="updateReplycnt">
+		update tbl_board
+		set replycnt=replycnt + #{amount}
+		where bno=#{bno}
+	</update>
 
 </mapper>

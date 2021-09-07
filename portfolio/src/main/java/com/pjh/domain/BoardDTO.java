@@ -1,16 +1,35 @@
 package com.pjh.domain;
 
 public class BoardDTO {
-	private int bno;
-	private String category;
-	private String sub_category;
-	private String title;
-	private String content;
-	private String writer;
-	private String regdate;
-	private int view;
-	private int recomend;
 	
+	private int bno;
+	
+	private String category;
+	
+	private String sub_category;
+	
+	private String title;
+	
+	private String content;
+	
+	private String writer;
+	
+	private String regdate;
+	
+	private int view;
+	
+	private int recommend;
+	
+	private int replycnt;
+	
+	
+	
+	public int getReplycnt() {
+		return replycnt;
+	}
+	public void setReplycnt(int replycnt) {
+		this.replycnt = replycnt;
+	}
 	public int getBno() {
 		return bno;
 	}
@@ -59,17 +78,17 @@ public class BoardDTO {
 	public void setView(int view) {
 		this.view = view;
 	}
-	public int getRecomend() {
-		return recomend;
+	public int getRecommend() {
+		return recommend;
 	}
-	public void setRecomend(int recomend) {
-		this.recomend = recomend;
+	public void setRecommend(int recommend) {
+		this.recommend = recommend;
 	}
 	
 	@Override
 	public String toString() {
 		return "BoardDTO [bno=" + bno + ", category=" + category + ", sub_category=" + sub_category + ", title=" + title
 				+ ", content=" + content + ", writer=" + writer + ", regdate=" + regdate + ", view=" + view
-				+ ", recomend=" + recomend + "]";
+				+ ", recommend=" + recommend + "]";
 	}
 }

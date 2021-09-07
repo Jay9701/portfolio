@@ -2,8 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="ko">
 <head>
-    <link rel="stylesheet" href="./resources/css/style.css">
-    <link rel="stylesheet" href="./resources/css/base.css">
+    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/base.css">
 	<title>portfolio</title>
 	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 </head>
@@ -23,15 +23,7 @@
 					<jsp:include page="../module/leftSide.jsp"></jsp:include>
 				</div>
 				<div class="ctn_content">
-					<!-- 자유 게시판 -->
-					<% if(request.getParameter("category").equals("freeBoard")) {%>
-					<jsp:include page="../module/freeBoard.jsp"></jsp:include>
-					
-					<!-- 이슈/토론/버그 게시판 -->
-					<% }else if(request.getParameter("category").equals("issueBoard")) {%>
-					<jsp:include page="../module/issueBoard.jsp"></jsp:include>
-					
-					<% } %>
+					<jsp:include page="../module/md_detail.jsp"></jsp:include>
 				</div>
 			</div>
 		</div>
