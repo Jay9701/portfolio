@@ -29,6 +29,7 @@
 		</div>
 		
 		<aside id="wrap_right">
+			<jsp:include page="../module/rightSide.jsp"></jsp:include>
 		</aside>
 	</div>
 	<footer>

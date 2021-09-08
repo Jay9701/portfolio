@@ -76,10 +76,10 @@
 			<tr>
 				<td style="display: flex; justify-content: flex-end; margin-bottom: 10px">
 					<div class="btn_list" style="border: 1px solid #999; border-radius: 5px; padding: 5px 10px; margin-right: 5px; color: #999;">
-						<a href="board?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">목록</a>
+						<a href="/portfolio/board?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">목록</a>
 					</div>
 					<div class="btn_write" style="border:1px solid; border-radius: 5px; padding: 5px 20px; margin-right: 5px; background-color: #333; color: white">
-						<a href="board/write?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">글쓰기</a>
+						<a href="/portfolio/board/write?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">글쓰기</a>
 					</div>
 				</td>
 			</tr>
@@ -145,7 +145,15 @@
 						<c:forEach items="${list}" var="board" begin="${page-30}" end="${page-1}">
 						<tr height="35px">
 							<td style="text-align: center;">${board.bno}</td>
-							<td style="max-width:420px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; padding: 0 20px 0 10px;"><a href="board/detail?bno=${board.bno}"><span style="color: #aaa; margin-right: 10px;">[${board.sub_category}]</span>${board.title}</a></td>
+							<td style="max-width:420px; padding: 0 20px 0 10px;">
+								<a href="board/detail?bno=${board.bno}">
+									<span style="color: #aaa; margin-right: 10px;">[${board.sub_category}]</span>
+									<span style="display:inline-block; max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 100%;">${board.title}</span>
+								</a>
+								<c:if test="${board.replycnt != 0}">
+								<span style="color: red;">[${board.replycnt}]</span>
+								</c:if>
+							</td>
 							<td>${board.writer}</td>
 							<td style="text-align: center">${board.regdate}</td>
 							<td style="text-align: center">${board.view}</td>
@@ -159,10 +167,10 @@
 			<tr>
 				<td style="display: flex; justify-content: flex-end; margin: 30px 0 10px;">
 					<div class="btn_list" style="border: 1px solid #999; border-radius: 5px; padding: 5px 10px; margin-right: 5px; color: #999">
-						<a href="board?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">목록</a>
+						<a href="/portfolio/board?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">목록</a>
 					</div>
 					<div class="btn_write" style="border:1px solid; border-radius: 5px; padding: 5px 20px; margin-right: 5px; background-color: #333; color: white">
-						<a href="board/write?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">글쓰기</a>
+						<a href="/portfolio/board/write?category=<%= request.getParameter("category") %>" style="display:block; width:100%;">글쓰기</a>
 					</div>
 				</td>
 			</tr>

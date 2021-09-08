@@ -7,6 +7,8 @@
 <meta charset="EUC-KR">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+</style>
 </head>
 <body>
 	<div class="ctn_advertisement" style="width: 100%; height: 250px; background-color: green; color: white; position: relative; margin-bottom: 30px;">
@@ -22,59 +24,60 @@
 	</div>
 	<div style="display: flex; justify-content: space-between;">
 		<div style="width: 395px;">
-			<table style="width: 100%;">
-				<tr style="height: 30px; cursor: pointer;" onclick="location.href='/portfolio/board?category=freeBoard'">
-					<td style="position: relative; font-size: 14px; font-weight: bold; padding: 0 5px;">
-						자유게시판
-						<span style="position: absolute; top: 8px; right: 5px; font-size: 10px; color: #999;">더보기+</span>
-					</td>
-				</tr>
-				<tr style="height: 1px; background-color: #333;"><td colspan="100%"></td></tr>
-				<c:forEach items="${freeList}" var="board" end="9">
-				<tr>
-					<td style="border-bottom: 1px solid #ccc;">
-						<table>
-							<tr style="font-size: 12px; height: 26px;">
-								<td style="padding: 0 10px;">
-									${board.sub_category}
-								</td>
-								<td style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-									<a href="board/detail?bno=${board.bno}">
-										${board.title}
-									</a>
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				</c:forEach>
-			</table>
-		</div>
-		<div style="width: 395px; border: 1px solid">
-			<table style="width: 100%;">
-				<tr>
-					<td style="position: relative;">
-						이슈/토론/버그 제보
-						<span style="position: absolute; top: 10px; right: 5px;">더보기</span>
-					</td>
-				</tr>
-				<c:forEach items="${issueList}" var="board" end="9">
-				<tr>
-					<td>
-						<table>
-							<tr>
-								<td>
-									${board.sub_category}
-								</td>
-								<td>
+			<div>
+				<div style="height: 30px; cursor: pointer; position: relative; color: #333; font-size: 14px; font-weight: bold; padding: 0 5px;" onclick="location.href='/portfolio/board?category=freeBoard'">
+					자유게시판
+					<span style="position: absolute; top: 8px; right: 5px; font-size: 10px; color: #999;">더보기+</span>
+				</div>
+				<div style="height: 1px; background-color: #333;"></div>
+				<div>
+					<ul>
+					<c:forEach items="${freeList}" var="board" end="9">
+						<li style="border-top: 1px solid #ccc; font-size: 12px; line-height: 33px; display: flex;">
+							<div style="padding: 0 10px; color: #778eee;">
+								${board.sub_category}
+							</div>
+							<div style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-right: 3px;">
+								<a href="board/detail?bno=${board.bno}">
 									${board.title}
-								</td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				</c:forEach>
-			</table>
+								</a>
+							</div>
+							<c:if test="${board.replycnt != 0}">
+							<div style="color: red;">[${board.replycnt}]</div>
+							</c:if>
+						</li>
+					</c:forEach>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div style="width: 395px;">
+			<div>
+				<div style="height: 30px; cursor: pointer; position: relative; color: #333; font-size: 14px; font-weight: bold; padding: 0 5px;" onclick="location.href='/portfolio/board?category=issueBoard'">
+					이슈/토론/버그 제보
+					<span style="position: absolute; top: 8px; right: 5px; font-size: 10px; color: #999;">더보기+</span>
+				</div>
+				<div style="height: 1px; background-color: #333;"></div>
+				<div>
+					<ul>
+					<c:forEach items="${issueList}" var="board" end="9">
+						<li style="border-top: 1px solid #ccc; font-size: 12px; line-height: 33px; display: flex;">
+							<div style="padding: 0 10px; color: #778eee;">
+								${board.sub_category}
+							</div>
+							<div style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+								<a href="board/detail?bno=${board.bno}">
+									${board.title}
+								</a>
+							</div>
+							<c:if test="${board.replycnt != 0}">
+							<div style="color: red;">[${board.replycnt}]</div>
+							</c:if>
+						</li>
+					</c:forEach>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>

@@ -20,8 +20,16 @@ public class BoardDTO {
 	
 	private int recommend;
 	
+	private int replycnt;
 	
 	
+	
+	public int getReplycnt() {
+		return replycnt;
+	}
+	public void setReplycnt(int replycnt) {
+		this.replycnt = replycnt;
+	}
 	public int getBno() {
 		return bno;
 	}

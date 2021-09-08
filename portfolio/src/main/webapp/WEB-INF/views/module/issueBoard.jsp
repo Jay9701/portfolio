@@ -117,10 +117,9 @@
 			<tr style="height: 1px; background-color: #cecece;"><td colspan="100%"></td></tr>
 			<tr>
 				<td>
-					<table class="boardList" cellspacing="0" width="100%" style="font-size: 14px">
-						<tr height="30px">
-							<th width="50px">번호</th>
-							<th width="30px">
+					<table class="boardList" cellspacing="0" width="100%" style="font-size: 14px;">
+						<tr height="35px">
+							<th width="60px">번호</th>
 							<th width="420px">제목</th>
 							<th width="80px">글쓴이</th>
 							<th width="140px">등록일</th>
@@ -128,11 +127,18 @@
 							<th>추천</th>
 						</tr>
 						<tr style="height: 1px; background-color: #cecece;"><td colspan="100%"></td></tr>
-						<c:forEach items="${list}" var="board">
-						<tr height="30px">
-							<td style="text-align: center">${board.bno}</td>
-							<td>
-							<td><a href="board/detail?bno=${board.bno}"><span style="color: #aaa">[${board.sub_category}]</span>${board.title}</a></td>
+						<c:forEach items="${list}" var="board" begin="${page-30}" end="${page-1}">
+						<tr height="35px">
+							<td style="text-align: center;">${board.bno}</td>
+							<td style="max-width:420px; padding: 0 20px 0 10px;">
+								<a href="board/detail?bno=${board.bno}">
+									<span style="color: #aaa; margin-right: 10px;">[${board.sub_category}]</span>
+									<span style="display:inline-block; max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; line-height: 100%;">${board.title}</span>
+								</a>
+								<c:if test="${board.replycnt != 0}">
+								<span style="color: red;">[${board.replycnt}]</span>
+								</c:if>
+							</td>
 							<td>${board.writer}</td>
 							<td style="text-align: center">${board.regdate}</td>
 							<td style="text-align: center">${board.view}</td>

@@ -30,10 +30,10 @@
 	<div class="tb_util tb_list">
 		<ul>
 			<% if(session.getAttribute("memberInfo")==null){ %>
-			<li><a href="member/register" target="_blank">회원가입</a></li>
-			<li><a href="member/login" target="_blank">로그인</a></li>
+			<li><a href="/portfolio/member/register" target="_blank">회원가입</a></li>
+			<li><a href="/portfolio/member/login" target="_blank">로그인</a></li>
 			<%}else{ %>
-			<li><a href="member/logout" target="_blank">로그아웃</a></li>
+			<li><a href="/portfolio/member/logout">로그아웃</a></li>
 			<%} %>
 		</ul>
 	</div>

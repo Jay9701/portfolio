@@ -13,6 +13,15 @@ recommend int default 0,
 confirm boolean default 0
 );
 
+insert into tbl_board(category, sub_category, title, content, writer) values('freeBoard','잡담','테스트제목','테스트내용','사용자');
+insert into tbl_board(category, sub_category, title, content, writer) values('freeBoard','공지','테스트공지 제목','테스트공지 내용','운영자');
+insert into tbl_board(category, sub_category, title, content, writer) values('freeBoard','기타','기타 제목','기타 내용','부운영자');
+
+insert into tbl_board(category, sub_category, title, content, writer) values('issueBoard','서버1','버그 제보','버그 제보 내용','사용자');
+insert into tbl_board(category, sub_category, title, content, writer) values('issueBoard','서버2','테스트제목','테스트내용','운영자');
+insert into tbl_board(category, sub_category, title, content, writer) values('issueBoard','서버3','테스트제목','테스트내용','운영자');
+
+select * from tbl_board;
 insert into tbl_board(category,sub_category,title,content,writer)
 values('freeBoard','잡담','testTitle','testContent','user'),
 ('freeBoard','잡담','testTitle','testContent','user'),

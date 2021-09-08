@@ -43,9 +43,9 @@
 			로그인하고<br>
 			<span style="color: yellow; font-size: 13px;">출석보상</span>받으세요!
 		</p>
-		<a href="member/login"><p style="background-color: #4a4a4a; width: 100px; line-height:30px; margin: 0 auto 20px; text-align: center; color: white;">로그인</p></a>
+		<a href="/portfolio/member/login"><p style="background-color: #4a4a4a; width: 100px; line-height:30px; margin: 0 auto 20px; text-align: center; color: white;">로그인</p></a>
 		<ul style="display: flex; justify-content: space-evenly; width: 100%; font-size: 11px; color: #ccc; opacity: 0.8;">
-			<li><a href="member/register">회원가입</a></li>
+			<li><a href="/portfolio/member/register">회원가입</a></li>
 			<li><a>ID/PW 찾기</a></li>
 		</ul>
 		<%}else{ %>

@@ -34,6 +34,7 @@
 		.hd_gnb ul li{
 			width: 10%;
 			text-align: center;
+			font-size: 13px;
 			line-height: 35px;
 			background-color: #000e1a;
 			color: #ccc;

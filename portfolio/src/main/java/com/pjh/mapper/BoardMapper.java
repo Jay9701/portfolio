@@ -22,4 +22,5 @@ public interface BoardMapper {
 	public BoardDTO detail(int bno);
 	public void updateView(int bno);
 	public void updateRecommend(int bno);
+	public void updateReplycnt(int bno);
 }

@@ -60,5 +60,11 @@
 	<update id="updateRecommend">
 		update tbl_board set recommend = recommend + 1 where bno = #{bno};
 	</update>
+	
+	<update id="updateReplycnt">
+		update tbl_board
+		set replycnt=replycnt + 1
+		where bno=#{bno}
+	</update>
 
 </mapper>
