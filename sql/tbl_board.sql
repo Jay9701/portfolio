@@ -62,6 +62,8 @@ update tbl_board set confirm = 1 where bno = 12;
 
 alter table tbl_board add confirm boolean default 0;
 
+alter table tbl_board add replycnt int default 0;
+
 alter table tbl_board change recomend recommend int default 0;
 
 select * from tbl_board order by bno desc;
